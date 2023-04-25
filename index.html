@@ -10,27 +10,227 @@
             padding: 0;
             font-family: 'Montserrat', sans-serif;
         }
-        .main {
+        body {
+            background-color: #222222;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .navbar {
+            width: 1200px;
+            height: 80px;
+            margin-left: auto;
+            margin-right: auto;
+            display: grid;
+            grid-template-columns: 67px auto 200px;
+            grid-template-areas: "logo _ menu";
+        }
+        .logo {
+            display: block;
+            grid-area: logo;
+            padding-top: 15px;
+        }
+        .menu {
+            grid-area: menu;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 20px;
+        }
+        .menu-item {
+            list-style-type: none;
+            padding: 0;
+        }
+        .menu-item-bg {
+            width: 20px;
+            height: 20px;
+            margin-left: -20px;
+            background-color: #222222;
+            z-index: -1;
             position: absolute;
-            top: 50vh;
-            left: 50vw;
+            transition: all 0.3s ease;
+        }
+        .menu-item > a:hover > .menu-item-bg {
+            margin-left: 0;
+            background-color: #FF8762;
+        }
+
+        .team8-bg {
+            display: block;
+            width: 1200px;
+            opacity: 0.1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
+            margin-top: -50px;
+        }
+        .main-text {
+            color: #ffffff;
+            font-weight: 400;
+            font-size: 64px;
             text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin-top: -50px;
         }
-        .team8 {
-            font-size: 120px;
-            color: #222;
+        .bold-text {
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
         }
-        .team8-descr {
-            font-size: 40px;
-            color: #ddd;
+        .bold-text:hover {
+            text-shadow: 0px 0px 5px rgba(255,255,255,0.5);
         }
-    </style>
+        .cve-bg {
+            font-size: 20px;
+            color: #ffffff;
+            opacity: 0.1;
+            position: absolute;
+            top: 0;
+            width: 168px;
+        }
+        .cve-bg-left {
+            left: 0;
+            text-align: left;
+        }
+        .cve-bg-right {
+            right: 0;
+            text-align: right;
+        }
+        .bg-but {
+            width: 250px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 30px;
+            border-radius: 50px;
+            font-size: 32px;
+            text-align: center;
+            color: #ffffff;
+            background-color: #FF8762;
+            opacity: 0.2;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+        .bg-but:hover {
+            opacity: 1;
+        }
+        .bg-tb {
+            margin-top: 100px;
+        }
+        .bg-ad {
+            margin-top: 320px;
+        }
+        .stick {
+            width: 4px;
+            background-color: #ffffff;
+            opacity: 0.2;
+            position: absolute;
+        }
+        .stick-1 {
+            height: 125px;
+            top: 90px;
+            left: calc((100vw - 1200px) / 2 + 30.5px);
+        }
+        .ball {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: #ffffff;
+            opacity: 0.2;
+        }
+        .ball-1 {
+            top: 225px;
+            left: calc((100vw - 1200px) / 2 + 27.5px);
+        }
+        .stick-2 {
+            height: 390px;
+            transform: rotate(90deg);
+            top: 35px;
+            left: calc((100vw - 1200px) / 2 + 240px);
+        }
+        .stick-3 {
+            height: 390px;
+            transform: rotate(90deg);
+            top: 35px;
+            right: calc((100vw - 1200px) / 2 + 240px);
+        }
+        .ball-2 {
+            top: 225px;
+            right: calc((100vw - 1200px) / 2 + 27.5px);
+        }
+        .stick-4 {
+            height: 390px;
+            top: 245px;
+            right: calc((100vw - 1200px) / 2 + 30.5px);
+        }
+        .ball-3 {
+            top: 645px;
+            right: calc((100vw - 1200px) / 2 + 27.5px);
+        }
+        .stick-5 {
+            height: 390px;
+            top: 455px;
+            transform: rotate(90deg);
+            right: calc((100vw - 1200px) / 2 + 238px);
+        }
+        .stick-6 {
+            height: 140px;
+            top: 708px;
+            right: calc(50vw - 2px);
+        }
+        .bg-pentest {
+            position: absolute;
+            bottom: 0;
+            font-size: 98px;
+            color: #ffffff;
+            opacity: 0.2;
+            left: 50vw;
+            transform: translate(-50%);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+        .bg-pentest:hover {
+            opacity: 1;
+        }
+        </style>
     </head>
     <body>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><img src="imgs/logo.png"></a>
+            <div class="menu-button">
+                <span class="menu-button-item"></span>
+                <span class="menu-button-item"></span>
+                <span class="menu-button-item"></span>
+            </div>
+            <ul class="menu">
+                <li class="menu-item"><a href=""><div class="menu-item-bg"></div>about</a></li>
+                <li class="menu-item"><a href=""><div class="menu-item-bg"></div>achievements</a></li>
+            </ul>
+        </nav>
         <div class="main">
-            <h1 class="team8">Team8</h1>
-            <p class="team8-descr">Coming soon...</p>
+            <img class="team8-bg" src="imgs/team8_bg.png">
+            <p class="cve-bg cve-bg-left">CVE-2023-28432 CVE-2023-27350 CVE-2023-2136 CVE-2017-6742 CVE-2019-8526 CVE-2023-2033 CVE-2023-20963 CVE-2023-29492 CVE-2023-28252 CVE-2023-28205 CVE-2023-28206 CVE-2021-27876 CVE-2021-27877 CVE-2021-27878 CVE-2019-1388 CVE-2023-26083 CVE-2022-27926 CVE-2013-3163 CVE-2017-7494 CVE-2022-42948 CVE-2022-39197 CVE-2021-30900 CVE-2022-38181 CVE-2023-0266 CVE-2022-3038 CVE-2022-22706 CVE-2023-26360 CVE-2023-23397 CVE-2023-24880 CVE-2022-41328 CVE-2021-39144 CVE-2020-5741 CVE-2022-28810 CVE-2022-33891 CVE-2022-35914 CVE-2022-36537 CVE-2022-47986 CVE-2022-41223 CVE-2022-40765 CVE-2022-46169 CVE-2023-21715 CVE-2023-23376 CVE-2023-23529 CVE-2023-21823 CVE-2015-2291</p>
+            <p class="cve-bg cve-bg-right">CVE-2022-24990 CVE-2023-0669 CVE-2022-21587 CVE-2023-22952 CVE-2017-11357 CVE-2022-47966 CVE-2022-44877 CVE-2022-41080 CVE-2023-21674 CVE-2018-5430 CVE-2018-18809 CVE-2022-42856 CVE-2022-42475 CVE-2022-44698 CVE-2022-27518 CVE-2022-26500 CVE-2022-26501 CVE-2022-4262 CVE-2021-35587 CVE-2022-4135 CVE-2022-41049 CVE-2022-41091 CVE-2022-41073 CVE-2022-41125 CVE-2022-41128 CVE-2021-25337 CVE-2021-25369 CVE-2021-25370 CVE-2022-3723 CVE-2022-42827 CVE-2020-3433 CVE-2020-3153 CVE-2018-19323 CVE-2018-19322 CVE-2018-19321 CVE-2018-19320 CVE-2022-41352 CVE-2021-3493 CVE-2022-40684 CVE-2022-41033 CVE-2022-41082 CVE-2022-41040 CVE-2022-36804 CVE-2022-3236 CVE-2022-35405</p>
+            <div class="bg-but bg-tb">task based</div>
+            <div class="bg-but bg-ad">attack defense</div>
+            <div class="stick stick-1"></div>
+            <div class="ball ball-1"></div>
+            <div class="stick stick-2"></div>
+            <div class="stick stick-3"></div>
+            <div class="ball ball-2"></div>
+            <div class="stick stick-4"></div>
+            <div class="ball ball-3"></div>
+            <div class="stick stick-5"></div>
+            <div class="stick stick-6"></div>
+            <h1 class="bg-pentest">pentest</h1>
+            <h1 class="main-text">welcome to <br><span class="bold-text">CTF team</span> workspace</h1>
         </div>
     </body>
 </html>
